@@ -6,7 +6,6 @@ SYNC_START=$(date +"%s")
 
 sudo -E apt-get -qq update
 sudo -E apt-get -qq install curl
-pip install pyrogram tgcrypto
 
 SYNC_END=$(date +"%s")
 SYNC_DIFF=$((SYNC_END - SYNC_START))

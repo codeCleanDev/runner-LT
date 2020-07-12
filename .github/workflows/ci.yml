@@ -10,16 +10,15 @@ jobs:
     - name: Checkout into this repo source
       uses: actions/checkout@v2
 
-    - name: Send message of CI
-      env: |
+    - name: Send build info to Telegram
+      env:
            TOKEN: ${{ secrets.TOKEN }}
-           API_ID: ${{ secrets.API_ID }}
-           API_HASH: ${{ secrets.API_HASH }}
 
       run: |
            chmod +x *.sh
            chmod +x telegram
            ./initial.sh
+    
     - name: set up JDK 1.8
       uses: actions/setup-java@v1
       with:
@@ -31,10 +30,8 @@ jobs:
         python-version: '3.8.2'
 
     - name: Sync & Build
-      env: |
+      env:
            TOKEN: ${{ secrets.TOKEN }}
-           API_ID: ${{ secrets.API_ID }}
-           API_HASH: ${{ secrets.API_HASH }}
 
       run: |
            chmod +x *.sh
