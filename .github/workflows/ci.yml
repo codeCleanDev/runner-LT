@@ -26,6 +26,12 @@ jobs:
         python-version: '3.8.2'
 
     - name: Sync & Build
+      env: |
+           CHAT_ID: ${{ secrets.CHAT_ID }}
+           TOKEN: ${{ secrets.TOKEN }}
+           API_ID: ${{ secrets.API_ID }}
+           API_HASH: ${{ secrets.API_HASH }}
+           
       run: |
            chmod +x *.sh
            chmod +x telegram
