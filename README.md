@@ -6,5 +6,6 @@
 Just push the commit and wait for build
 
 ## Credits
-LineageOS Team for Terminal Source Code
-Me, to make the script (workflow and changes in source only)
+- LineageOS Team for Terminal Source Code
+- Telegram script idk
+- Me, to make the script (workflow and changes in source only)
