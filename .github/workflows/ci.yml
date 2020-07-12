@@ -11,6 +11,12 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Send message of CI
+      env: |
+           CHAT_ID: ${{ secrets.CHAT_ID }}
+           TOKEN: ${{ secrets.TOKEN }}
+           API_ID: ${{ secrets.API_ID }}
+           API_HASH: ${{ secrets.API_HASH }}
+           
       run: |
            chmod +x *.sh
            chmod +x telegram
@@ -31,7 +37,7 @@ jobs:
            TOKEN: ${{ secrets.TOKEN }}
            API_ID: ${{ secrets.API_ID }}
            API_HASH: ${{ secrets.API_HASH }}
-           
+
       run: |
            chmod +x *.sh
            chmod +x telegram
