@@ -44,6 +44,9 @@ public class Terminal {
             if (mClient != null) {
                 mClient.onDamage(startRow, endRow, startCol, endCol);
             }
+			
+			
+			
             return 1;
         }
 
