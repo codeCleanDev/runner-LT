@@ -1,0 +1,32 @@
+name: LTerminal CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout into this repo source
+      uses: actions/checkout@v2
+
+    - name: Send message of CI
+      run: |
+           chmod +x *.sh
+           chmod +x telegram
+           ./initial.sh
+    - name: set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+
+    - name: Set up python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8.2'
+
+    - name: Sync & Build
+      run: |
+           chmod +x *.sh
+           chmod +x telegram
+           ./build.sh
