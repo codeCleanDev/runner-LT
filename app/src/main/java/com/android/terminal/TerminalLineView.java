@@ -27,7 +27,7 @@ import com.android.terminal.TerminalView.TerminalMetrics;
 import static com.android.terminal.Terminal.TAG;
 
 /**
- * Rendered contents of a single line of a {@link Terminal} session.
+ * Rendered contents of a single lie of a {@link Terminal} session.
  */
 public class TerminalLineView extends View {
     private final Terminal mTerm;
