@@ -29,8 +29,6 @@ import com.xmansoft.libs.butterknife.annotation.BindView;
 import com.xmansoft.libs.butterknife.ButterKnife;
 
 
-
-
 public class MainActivity extends  TiActivity<MainActivityPresenter ,MainView> implements MainView, BottomNavigationView.OnNavigationItemSelectedListener 
 {
 
@@ -39,7 +37,6 @@ public class MainActivity extends  TiActivity<MainActivityPresenter ,MainView> i
    
     public void setTitle(String newTitle) {
        changeTitle(newTitle);
-	   
     }
 
 
@@ -91,7 +88,7 @@ public class MainActivity extends  TiActivity<MainActivityPresenter ,MainView> i
     @NonNull
     @Override
     public MainActivityPresenter providePresenter() {
-        return new MainActivityPresenter();
+        return new MainActivityPresenter<>();
     }
 
     @Override

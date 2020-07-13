@@ -58,9 +58,6 @@ public class CircleImageView extends ImageView {
     private static final int DEFAULT_CIRCLE_BACKGROUND_COLOR = Color.TRANSPARENT;
     private static final boolean DEFAULT_BORDER_OVERLAY = false;
 
-
-
-
     private final RectF mDrawableRect = new RectF();
     private final RectF mBorderRect = new RectF();
 
