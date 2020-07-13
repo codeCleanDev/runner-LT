@@ -91,7 +91,7 @@ public class MainActivity extends  TiActivity<MainActivityPresenter ,MainView> i
     @NonNull
     @Override
     public MainActivityPresenter providePresenter() {
-        return new MainActivityPresenter<>();
+        return new MainActivityPresenter();
     }
 
     @Override
