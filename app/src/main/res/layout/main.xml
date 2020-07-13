@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<androidx.appcompat.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:minHeight="?attr/actionBarSize"
+		android:background="@color/colorPrimaryDark"
+		android:layout_width="match_parent"
+		android:theme="@style/AppTheme.AppBarOverlay"
+		app:popupTheme="@style/AppTheme.PopupOverlay"
+		android:layout_height="wrap_content">
+
+	</androidx.appcompat.widget.Toolbar>
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="0.0dip"
+		android:layout_weight="1.0"
+		android:id="@+id/frContainer"
+		android:background="@drawable/bg_rounded_white"
+		android:elevation="1.0dip"
+		android:layout_gravity="center">
+        
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Text"
+			android:gravity="center"
+			android:id="@+id/ussdtext"/>
+
+	</FrameLayout>
+
+	<com.google.android.material.bottomnavigation.BottomNavigationView
+		android:id="@+id/nav_bottom"
+		android:layout_width="match_parent"
+		android:layout_height="?actionBarSize"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		app:menu="@menu/bottom_nav_items"
+		app:itemIconTint="@color/bottom_nav_item_state"
+		app:itemTextColor="@color/bottom_nav_item_state"
+		android:background="@drawable/nav_bottom_back"
+		android:layout_margin="5dp"
+		style="@style/Widget.Design.BottomNavigationView"
+		android:layout_alignParentBottom="true"/>
+
+</LinearLayout>
+
