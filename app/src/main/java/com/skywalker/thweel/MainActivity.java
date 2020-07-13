@@ -29,6 +29,8 @@ import com.xmansoft.libs.butterknife.annotation.BindView;
 import com.xmansoft.libs.butterknife.ButterKnife;
 
 
+
+
 public class MainActivity extends  TiActivity<MainActivityPresenter ,MainView> implements MainView, BottomNavigationView.OnNavigationItemSelectedListener 
 {
 
