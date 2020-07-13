@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin : 'org.greenrobot.greendao'
+
 
 android {
     compileSdkVersion 29
@@ -7,6 +7,7 @@ android {
     defaultConfig {
         applicationId "com.skywalker.thweel"
         minSdkVersion 19
+	compileSdkVersion 29
         targetSdkVersion 29
         versionCode 1
         versionName "1.0.0"
