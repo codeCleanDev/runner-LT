@@ -1,30 +1,22 @@
-# Add project specific ProGuard rules here.
-# By default, the flags in this file are appended to flags specified
-# in C:/tools/adt-bundle-windows-x86_64-20131030/sdk/tools/proguard/proguard-android.txt
-# You can edit the include path and order by changing the proguardFiles
-# directive in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
-
-# Add any project specific keep options here:
-
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
--keepattributes SourceFile, LineNumberTable
-
--keep class com.android.terminal.TerminalCallbacks { *; }
--keep class com.android.terminal.Terminal { native <methods>; }
--keep class com.android.terminal.** { *; }
--dontwarn com.android.terminal.**
-
--renamesourcefileattribute SourceFile
--repackageclasses 'a'
-
 -ignorewarnings
 -dontwarn
 -dontnote
+-dontwarn com.xmansoft.libs.butterknife.**
+
+-keepclasseswithmembers @interface com.xmansoft.libs.butterknife.annotation.** { 
+     int value();
+}
+
+-keepclassmembers, allowobfuscation class * {
+     @com.xmansoft.libs.butterknife.annotation.** <fields>;
+}
+
+-keepclassmembers, allowobfuscation class * {
+    @com.xmansoft.libs.butterknife.annotation.** <methods>;
+}
+
+
+-dontwarn androidx.arch.**
+-dontwarn androidx.lifecycle.**
+-keep class androidx.arch.** { *; }
+-keep class androidx.lifecycle.** { *; }

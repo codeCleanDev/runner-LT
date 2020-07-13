@@ -1,46 +1,54 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.android.terminal">
+<?xml version='1.0' encoding='utf-8'?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.skywalker.thweel">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-sdk tools:overrideLibrary="com.romellfudi.ussdlibrary"/>
+    <!--read phone status and identity-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
-    <uses-feature android:name="android.software.leanback"
-        android:required="false" />
+    <!--draw over other apps-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
-    <uses-feature android:name="android.hardware.touchscreen"
-        android:required="false" />
+    <!--directly call phone numbers-->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
-    <uses-feature android:name="android.hardware.screen.portrait"
-        android:required="false" />
+    <!--BIND_ACCESSIBILITY_SERVICE
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>-->
 
     <application
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_label"
-        android:appCategory="productivity"
-        android:enabled="false">
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme"
+        android:resizeableActivity="true">
 
         <activity
-            android:name=".TerminalActivity"
-            android:windowSoftInputMode="stateAlwaysVisible|adjustResize"
-            android:theme="@style/TermTheme.NoActionBar">
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.LEANBACK_SETTINGS" />
+
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+
             </intent-filter>
+
         </activity>
 
-        <activity
-            android:name=".TerminalSettingsActivity"
-            android:label="@string/menu_item_settings"
-            android:theme="@style/TermTheme"
-            android:excludeFromRecents="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-
-        <service android:name=".TerminalService" />
     </application>
 
+    <service
+    android:name = "com.romellfudi.ussdlibrary.USSDService"
+    android:permission = "android.permission.BIND_ACCESSIBILITY_SERVICE" >
+    <intent-filter >
+    <action android:name = "android.accessibilityservice.AccessibilityService" />
+</intent-filter >
+<meta-data
+    android:name = "android.accessibilityservice"
+    android:resource = "@xml/ussd_config" />
+</service>
 </manifest>
