@@ -1,6 +1,8 @@
 name: LTerminal CI
 
-on: [push]
+on:
+ repository_dispatch:
+   types: build-debug
 
 jobs:
   build:
