@@ -2,7 +2,7 @@ name: LTerminal CI
 
 on:
  repository_dispatch:
-   types: build-debug
+    types: build
 
 jobs:
   build:
